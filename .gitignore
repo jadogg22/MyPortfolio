@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 # http://www.gnu.org/software/automake
+
+node_modules
+dist
+.env
+.DS_Store
+.vite
+*.log
 
 Makefile.in
 /ar-lib
@@ -50,3 +58,5 @@ m4/lt~obsolete.m4
 # can automatically generate from config.status script
 # (which is called by configure script))
 Makefile
+=======
+>>>>>>> 1cc2e2c (Initial commit - good start)
