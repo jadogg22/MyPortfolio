@@ -3,7 +3,7 @@ import { useState } from 'react';
 const galleryItems = [
   { title: 'My Dev Setup', src: '/gallery/dev-setup.jpg' },
   { title: 'GitHub Projects', src: '/gallery/github-projects.png' },
-  { title: 'Halo Tournament', src: '/gallery/IMG_20711.JPG' },
+  { title: 'Halo Tournament', src: '/gallery/halo-tournament.jpg' },
   { title: 'Photography Work', src: '/gallery/photography.jpg' },
   { title: 'Linux Desktop', src: '/gallery/linux-desktop.png' },
   { title: 'Car Collection', src: '/gallery/car-collection.jpg' },
@@ -94,7 +94,8 @@ export default function GallerySection() {
               <div className="text-center text-gray-500">
                 <div className="text-6xl mb-4">🖼️</div>
                 <div className="text-lg mb-2">{galleryItems[selectedImage].title}</div>
-                <img src={galleryItems[selectedImage].src} alt={galleryItems[selectedImage].title} className="bject-contain" />                <div className="text-xs mt-4 text-gray-400 bg-gray-100 p-2 rounded border">
+                <div className="text-sm">Image would be displayed here</div>
+                <div className="text-xs mt-4 text-gray-400 bg-gray-100 p-2 rounded border">
                   File: {galleryItems[selectedImage].src}
                 </div>
                 <div className="text-xs mt-2 text-blue-600">

@@ -80,12 +80,14 @@ export const NotepadContent: React.FC<NotepadProps> = ({ onClose }) => {
     }
   };
 
+  /*
   const toggleWordWrap = () => {
     if (textareaRef.current) {
       const currentWrap = textareaRef.current.style.whiteSpace;
       textareaRef.current.style.whiteSpace = currentWrap === 'nowrap' ? 'pre-wrap' : 'nowrap';
     }
   };
+  */
 
   return (
     <div className="h-full flex flex-col bg-gray-200">
