@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const galleryItems = [
   { title: 'My Dev Setup', src: '/gallery/dev-setup.jpg' },

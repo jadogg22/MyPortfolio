@@ -19,10 +19,7 @@ const WindowsXPPortfolio: React.FC = () => {
   const {
     windows,
     activeWindow,
-    dragState,
     setActiveWindow,
-    setDragState,
-    setWindows,
     openWindow,
     closeWindow,
     minimizeWindow,

@@ -6,7 +6,7 @@ interface NotepadProps {
   onMaximize?: () => void;
 }
 
-export const NotepadContent: React.FC<NotepadProps> = ({ onClose, onMinimize, onMaximize }) => {
+export const NotepadContent: React.FC<NotepadProps> = ({ onClose }) => {
   const [text, setText] = useState<string>('');
   const [fileName, setFileName] = useState<string>('Untitled');
   const [isModified, setIsModified] = useState<boolean>(false);

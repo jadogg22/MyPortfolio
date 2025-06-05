@@ -4,14 +4,14 @@ import GallerySection from './GallerySection';
 const tabs = ['General', 'Developer', 'Personality', 'Gallery', 'Gallery2'] as const;
 type Tab = typeof tabs[number];
 
-const galleryItems = [
+{/*const galleryItems = [
   { title: 'My Dev Setup', src: '/gallery/dev-setup.jpg' },
   { title: 'GitHub Projects', src: '/gallery/github-projects.png' },
   { title: 'Halo Tournament', src: '/gallery/halo-tournament.jpg' },
   { title: 'Photography Work', src: '/gallery/photography.jpg' },
   { title: 'Linux Desktop', src: '/gallery/linux-desktop.png' },
   { title: 'Car Collection', src: '/gallery/car-collection.jpg' },
-];
+];*/}
 
 export const AboutMeWindow: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('General');
