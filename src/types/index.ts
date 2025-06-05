@@ -11,12 +11,15 @@ interface Size {
 interface WindowData {
   id: string;
   title: string;
-  content: string;
-  position: Position;
-  size: Size;
+  content: React.ReactNode | string;
+  position: { x: number; y: number };
+  size: { width: number; height: number };
   isMaximized: boolean;
   isMinimized: boolean;
+  prevPosition?: { x: number; y: number };
+  prevSize?: { width: number; height: number };
 }
+
 
 interface DesktopIcon {
   id: string;

@@ -13,7 +13,8 @@ export const MinesweeperWindow: React.FC = () => {
   if (board.length === 0) return <div className="p-4">Loading...</div>;
 
   return (
-    <div className="p-2 font-mono text-xs bg-gray-100 select-none">
+    <div className="p-2 font-mono text-xs bg-gray-100 select-none justify-center">
+      <h2 className="text-lg font-bold mb-2">Minesweeper</h2>
       <div className="flex justify-between items-center mb-2">
         <span>Status: <strong>{gameStatus}</strong></span>
         <button
@@ -25,7 +26,7 @@ export const MinesweeperWindow: React.FC = () => {
       </div>
 
       <div
-        className="grid border border-black justify-center
+        className="grid border border-black justify-center py-8
 "
         style={{
           gridTemplateColumns: `repeat(${board[0].length}, 24px)`

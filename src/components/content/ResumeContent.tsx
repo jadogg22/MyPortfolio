@@ -22,12 +22,7 @@ export const ResumeContent: React.FC = () => {
         <ul className="list-disc ml-5 space-y-1">
           <li>Created a Go-based backend for Excel invoice generation</li>
           <li>Custom filters/layouts per client; saved hours weekly and prevented contract losses</li>
-        </ul>
-
-        <h2 className="text-xl font-bold mt-6 mb-2">About Me</h2>
-        <p>
-          I’m a backend-focused dev who thrives on solving real-world problems. I build practical tools that automate reporting, improve data flow, and streamline workflows. Go, Rust, and full-stack are my bread and butter.
-        </p>
+        </ul> 
 
         <h2 className="text-xl font-bold mt-6 mb-2">Contact & Links</h2>
         <ul className="ml-5">

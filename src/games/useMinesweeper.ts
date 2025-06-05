@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import type { Cell } from '../types/Minesweeper'; 
 
+const critAudio = new Audio('/audio/critical-stop.mp3');
+
 export function useMinesweeper(rows: number, cols: number, mines: number) {
   const [board, setBoard] = useState<Cell[][]>([]); 
   const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'lost'>('playing');
@@ -80,6 +82,8 @@ export function useMinesweeper(rows: number, cols: number, mines: number) {
             );
         setBoard(revealedBoard);
         setGameStatus('lost');
+        critAudio.play();
+        console.log('Game Over! You hit a mine.');
         return;
     }
 
@@ -101,6 +105,7 @@ export function useMinesweeper(rows: number, cols: number, mines: number) {
         }
 
         setBoard(newBoard);
+        checkWin();
     }
 
     const toggleFlag = (x: number, y: number) => {
@@ -109,6 +114,7 @@ export function useMinesweeper(rows: number, cols: number, mines: number) {
         const newBoard = [...board];
         newBoard[x][y].isFlagged = !newBoard[x][y].isFlagged;
         setBoard(newBoard);
+        checkWin();
     };
 
     const checkWin = () => {

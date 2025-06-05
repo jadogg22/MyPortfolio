@@ -11,25 +11,41 @@ export const useWindowManager = () => {
   });
 
   const openWindow = (icon: DesktopIcon) => {
-    const existingWindow = windows.find(w => w.id === icon.id);
-    if (existingWindow) {
-      setActiveWindow(existingWindow.id);
-      return;
-    }
+  const existingWindow = windows.find(w => w.id === icon.id);
+  if (existingWindow) {
+    setActiveWindow(existingWindow.id);
+    return;
+  }
 
-    const newWindow: WindowData = {
-      id: icon.id,
-      title: icon.name,
-      content: icon.content,
-      position: { x: 100 + windows.length * 30, y: 100 + windows.length * 30 },
-      size: { width: 600, height: 400 },
-      isMaximized: false,
-      isMinimized: false
-    };
+  const maxWidth = window.innerWidth - 40;
+  const maxHeight = window.innerHeight - 60; 
 
-    setWindows([...windows, newWindow]);
-    setActiveWindow(newWindow.id);
+  const defaultWidth = 600;
+  const defaultHeight = 400;
+
+  const width = Math.min(defaultWidth, maxWidth);
+  const height = Math.min(defaultHeight, maxHeight);
+
+  const offsetX = 100 + windows.length * 30;
+  const offsetY = 100 + windows.length * 30;
+
+  const x = Math.max(0, Math.min(offsetX, maxWidth - width));
+  const y = Math.max(0, Math.min(offsetY, maxHeight - height));
+
+  const newWindow: WindowData = {
+    id: icon.id,
+    title: icon.name,
+    content: icon.content,
+    position: { x, y },
+    size: { width, height },
+    isMaximized: false,
+    isMinimized: false
   };
+
+  setWindows([...windows, newWindow]);
+  setActiveWindow(newWindow.id);
+};
+
 
   const closeWindow = (windowId: string) => {
     setWindows(windows.filter(w => w.id !== windowId));
